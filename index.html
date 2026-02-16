@@ -73,6 +73,18 @@
             margin-bottom: 8px;
             border: 1px solid #eee;
         }
+        .program-img {
+            width: 100%;
+            border-radius: 8px;
+            display: block;
+            background-color: #e5e7eb;
+            min-height: 150px;
+            object-fit: cover;
+        }
+        /* Estilo para cuando la imagen no carga */
+        img:not([src]), img[src=""] {
+            visibility: hidden;
+        }
     </style>
 </head>
 <body class="pb-20">
@@ -83,15 +95,18 @@
             <h1 class="text-3xl font-bold tracking-widest uppercase">Interescuelas</h1>
             <p class="text-xl opacity-90 mt-2">Granada 2026</p>
             <div class="mt-4 flex justify-center">
-                <div class="w-24 h-24 bg-white rounded-full flex items-center justify-center p-2 shadow-lg">
-                   <i class="fa-solid fa-graduation-cap text-red-800 text-4xl"></i>
+                <div class="w-24 h-24 bg-white rounded-full flex items-center justify-center p-2 shadow-lg overflow-hidden">
+                   <!-- LOGO DEL EVENTO -->
+                   <!-- Sustituye el src por el "Enlace Directo" de Postimages -->
+                   <img id="logo-img" src="https://i.postimg.cc/NM785kw8/Logo-1.jpg" alt="Logo" class="w-full h-full object-contain" 
+                        onerror="this.parentElement.innerHTML='<i class=\'fa-solid fa-graduation-cap text-red-800 text-4xl\'></i>'">
                 </div>
             </div>
             <p class="mt-4 italic text-sm">"Don de gentes, arte en el protocolo"</p>
         </div>
     </header>
 
-    <!-- MENÚ DE NAVEGACIÓN (Deslizable lateralmente) -->
+    <!-- MENÚ DE NAVEGACIÓN -->
     <nav class="flex overflow-x-auto p-4 space-x-2 sticky top-0 bg-white z-50 shadow-md no-scrollbar">
         <button onclick="showSection('inicio')" class="nav-pill active" id="btn-inicio">Inicio</button>
         <button onclick="showSection('programa')" class="nav-pill" id="btn-programa">Programa</button>
@@ -111,34 +126,32 @@
             <h2 class="section-title">Bienvenidos</h2>
             <div class="card border-none bg-red-800 text-white">
                 <p class="text-lg font-semibold">¡Hola protocolarios!</p>
-                <p class="text-sm opacity-90 mt-2">Estamos encantados de recibiros en nuestra sede para el encuentro anual de la EIP.</p>
+                <p class="text-sm opacity-90 mt-2">Estamos encantados de recibiros en nuestra sede para este encuentro nacional de la EIP.</p>
             </div>
             <p class="text-gray-700 leading-relaxed px-2">
-                Esta guía interactiva contiene todos los descuentos que hemos gestionado para que vuestra estancia sea inolvidable y recomendaciones de la ciudad. Navega por las pestañas para descubrir todo lo que Granada tiene preparado para vosotros.
+                Esta guía interactiva contiene todos los descuentos que hemos gestionado para que vuestra estancia sea inolvidable además de una guía de recomendaciones de la ciudad. Navega por las pestañas para descubrir todo lo que Granada tiene preparado para vosotros.
             </p>
         </section>
 
         <!-- PROGRAMA -->
         <section id="programa" class="content-section hidden text-center">
             <h2 class="section-title">Programa Oficial</h2>
-            <p class="text-xs text-gray-500 mb-4 italic">Haz clic en las imágenes para ampliar (próximamente)</p>
-            <div class="space-y-4">
+            <p class="text-xs text-gray-500 mb-4 italic">Toca las imágenes para ver en detalle</p>
+            <div class="space-y-6">
                 <div class="rounded-lg border shadow-sm bg-white p-2">
-                    <p class="font-bold text-red-800 mb-2">JUEVES 16 ABRIL</p>
-                    https://lh3.googleusercontent.com/u/0/d/1z5hF8t3n1SkPua9aNzyUbDWBe4kixNLG/view?usp=sharing
-                    <img src="https://via.placeholder.com/400x600?text=Programa+Jueves" alt="Programa Jueves" class="program-img">
+                    <p class="font-bold text-red-800 mb-2 uppercase text-xs">Jueves 16 Abril</p>
+                    <img src="https://i.postimg.cc/CMGrqb4r/JUEVES.jpg" alt="Programa Jueves" class="program-img" 
+                         onerror="this.src='https://via.placeholder.com/400x200?text=Imagen+No+Disponible'">
                 </div>
                 <div class="rounded-lg border shadow-sm bg-white p-2">
-                    <p class="font-bold text-red-800 mb-2">VIERNES 17 ABRIL</p>
-                    <div class="bg-gray-100 h-64 flex items-center justify-center rounded text-gray-400">
-                        [Imagen del Programa Viernes]
-                    </div>
+                    <p class="font-bold text-red-800 mb-2 uppercase text-xs">Viernes 17 Abril</p>
+                    <img src="https://i.postimg.cc/mD8cvXs8/VIERNES.jpg" alt="Programa Viernes" class="program-img" 
+                         onerror="this.src='https://via.placeholder.com/400x200?text=Imagen+No+Disponible'">
                 </div>
                 <div class="rounded-lg border shadow-sm bg-white p-2">
-                    <p class="font-bold text-red-800 mb-2">SÁBADO 18 ABRIL</p>
-                    <div class="bg-gray-100 h-64 flex items-center justify-center rounded text-gray-400">
-                        [Imagen del Programa Sábado]
-                    </div>
+                    <p class="font-bold text-red-800 mb-2 uppercase text-xs">Sábado 18 Abril</p>
+                    <img src="https://i.postimg.cc/rsHDmDzN/SABADO.jpg" alt="Programa Sábado" class="program-img" 
+                         onerror="this.src='https://via.placeholder.com/400x200?text=Imagen+No+Disponible'">
                 </div>
             </div>
         </section>
@@ -156,18 +169,12 @@
                     <p class="text-xs text-gray-500 uppercase font-bold mb-1">Código de descuento</p>
                     <p class="text-2xl font-mono font-bold text-red-800 tracking-widest">EI2026</p>
                 </div>
-                <ul class="mt-4 text-xs space-y-2 text-gray-600">
-                    <li><i class="fa-solid fa-calendar-check mr-2"></i><b>Fechas:</b> Del 14 al 21 de abril.</li>
-                    <li><i class="fa-solid fa-clock mr-2"></i><b>Validez:</b> Disponible para compras desde hoy.</li>
-                </ul>
             </div>
         </section>
 
         <!-- ALOJAMIENTO -->
         <section id="alojamiento" class="content-section hidden">
             <h2 class="section-title">Alojamiento</h2>
-            
-            <!-- Gran Hotel Luna -->
             <div class="card">
                 <div class="flex justify-between items-center mb-2">
                     <h3 class="font-bold text-sm">Gran Hotel Luna de Granada</h3>
@@ -175,165 +182,59 @@
                 </div>
                 <p class="text-xs text-gray-500 mb-3 font-mono">Código: ENCUENTROINTERESCUELAS</p>
                 <div class="space-y-2">
-                    <a href="tel:958089920" class="contact-link text-sm">
-                        <i class="fa-solid fa-phone text-red-700"></i> 958 08 99 20
-                    </a>
-                    <a href="mailto:reservaslunagranada@delunahotels.com" class="contact-link text-sm">
-                        <i class="fa-solid fa-envelope text-red-700"></i> Enviar Email
-                    </a>
-                    <a href="https://www.delunahotels.com/granada/hoteles/gran-hotel-luna-de-granada" target="_blank" class="contact-link text-sm">
-                        <i class="fa-solid fa-globe text-red-700"></i> Web Oficial
-                    </a>
+                    <a href="tel:958089920" class="contact-link text-sm"><i class="fa-solid fa-phone text-red-700"></i> 958 08 99 20</a>
+                    <a href="https://www.delunahotels.com/granada/hoteles/gran-hotel-luna-de-granada" target="_blank" class="contact-link text-sm"><i class="fa-solid fa-globe text-red-700"></i> Web Oficial</a>
                 </div>
             </div>
-
-            <!-- Libere -->
             <div class="card">
                 <div class="flex justify-between items-center mb-2">
                     <h3 class="font-bold text-sm">Libere Granada Catedral</h3>
                     <span class="discount-badge">15%</span>
                 </div>
-                <p class="text-xs text-gray-500 mb-3 font-mono uppercase">Código: LIBEREEIP2026</p>
-                <p class="text-xs text-gray-600 mb-3">Válido en tarifa flexible y no reembolsable (16-19 abril).</p>
-                <a href="https://www.staylibere.com/es/apartamentos/libere-granada-catedral" target="_blank" class="contact-link text-sm">
-                    <i class="fa-solid fa-globe text-red-700"></i> Reservar en Web
-                </a>
-            </div>
-
-            <!-- Campo del Príncipe -->
-            <div class="card">
-                <h3 class="font-bold text-sm mb-2">Apartamentos Campo del Príncipe</h3>
-                <div class="bg-yellow-50 p-3 rounded-lg border border-yellow-200 mb-3">
-                    <p class="text-xs font-bold text-yellow-800 uppercase">Beneficio:</p>
-                    <p class="text-xs text-yellow-900">Desayuno gratuito incluido (viernes y sábado mañana).</p>
-                </div>
-                <p class="text-[11px] text-gray-600 leading-tight mb-3">
-                    <b>IMPORTANTE:</b> Una vez reservado, confirma enviando tu nombre al siguiente email para recibir las invitaciones:
-                </p>
-                <a href="mailto:reservas@apartamentoscampodelprincipe.es" class="contact-link text-sm">
-                    <i class="fa-solid fa-envelope-open-text text-red-700"></i> reservas@apartamentoscampodelprincipe.es
-                </a>
+                <p class="text-xs text-gray-500 mb-3 font-mono">Código: LIBEREEIP2026</p>
+                <a href="https://www.staylibere.com/es/apartamentos/libere-granada-catedral" target="_blank" class="contact-link text-sm"><i class="fa-solid fa-globe text-red-700"></i> Reservar</a>
             </div>
         </section>
 
-        <!-- DÓNDE COMER -->
+        <!-- COMER -->
         <section id="comer" class="content-section hidden">
             <h2 class="section-title">Dónde Comer</h2>
             <div class="card">
-                <div class="flex justify-between items-center mb-2">
-                    <h3 class="font-bold text-sm uppercase">Mirador de Aixa</h3>
-                    <span class="discount-badge">5% DTO.</span>
-                </div>
-                <p class="text-xs text-gray-600">Descuento aplicado sobre carta en este emblemático Carmen.</p>
-                <div class="mt-4 p-3 bg-gray-50 rounded text-[11px] text-gray-500 border-l-2 border-red-800">
-                    <b>Condiciones:</b> No aplicable de viernes noche a domingo.
-                </div>
+                <h3 class="font-bold text-sm uppercase">Mirador de Aixa</h3>
+                <span class="discount-badge inline-block mt-1">5% DTO.</span>
+                <p class="text-xs text-gray-600 mt-2">Descuento aplicado sobre carta. Imprescindible identificarse.</p>
             </div>
-            <p class="text-center text-xs text-gray-400 mt-4 italic">Estamos trabajando para añadir más opciones gastronómicas...</p>
         </section>
 
         <!-- ACTIVIDADES -->
         <section id="actividades" class="content-section hidden">
             <h2 class="section-title">Actividades</h2>
-            
-            <!-- Andalucía a Pie -->
             <div class="card">
-                <div class="flex justify-between items-start mb-2">
-                    <h4 class="font-bold text-sm">Andalucía a Pie</h4>
-                    <span class="discount-badge">20%</span>
-                </div>
-                <p class="text-xs text-gray-500 mb-3 font-mono">Código: INTERESCUELAS20</p>
-                <a href="https://andaluciapie.es/" target="_blank" class="contact-link text-sm">
-                    <i class="fa-solid fa-link text-red-700"></i> Ir a la Web
-                </a>
+                <h4 class="font-bold text-sm">Andalucía a Pie (20% DTO)</h4>
+                <p class="text-xs text-gray-500 mb-2 font-mono">Código: INTERESCUELAS20</p>
             </div>
-
-            <!-- Lolita's -->
             <div class="card">
-                <div class="flex justify-between items-start mb-2">
-                    <h4 class="font-bold text-sm">Lolita's Tour</h4>
-                    <span class="discount-badge">15%</span>
-                </div>
-                <p class="text-xs text-gray-500 mb-3 font-mono uppercase">Código: INTERESCUELAS15</p>
-                <a href="https://www.lolitastours.com" target="_blank" class="contact-link text-sm">
-                    <i class="fa-solid fa-link text-red-700"></i> Ver todos los Tours
-                </a>
-            </div>
-
-            <!-- Walk in Granada -->
-            <div class="card">
-                <div class="flex justify-between items-start mb-2">
-                    <h4 class="font-bold text-sm">Walk in Granada (Visitas Privadas)</h4>
-                    <span class="discount-badge">20%</span>
-                </div>
-                <p class="text-xs text-gray-600 mb-3">Imprescindible reservar vía email identificándose como miembro del evento.</p>
-                <a href="mailto:info@walkingranada.com" class="contact-link text-sm">
-                    <i class="fa-solid fa-envelope text-red-700"></i> info@walkingranada.com
-                </a>
-                <p class="text-[10px] text-gray-400 mt-2 italic">Incluye: Alhambra, Sacromonte, Ruta Lorca, Albaicín y más.</p>
-            </div>
-
-            <!-- Tablaos -->
-            <div class="card">
-                <h4 class="font-bold text-sm mb-3">Flamenco en Granada</h4>
-                <div class="space-y-4">
-                    <div class="border-t pt-3">
-                        <p class="text-xs font-bold">Jardines de Zoraya / Palacio Flamenco</p>
-                        <p class="text-xs text-gray-500 mb-2">Código 20% DTO: <span class="font-mono text-red-800">INTERESCUELAS20</span></p>
-                    </div>
-                    <div class="border-t pt-3">
-                        <p class="text-xs font-bold">La Soleá (20% DTO)</p>
-                        <a href="https://wa.me/34615243105" class="text-xs text-red-800 underline">Reservar por WhatsApp</a>
-                    </div>
-                    <div class="border-t pt-3">
-                        <p class="text-xs font-bold">Teatro Flamenco Granada (20% DTO)</p>
-                        <p class="text-[10px] mb-1">Código: <span class="font-mono">ESTU2026</span> (Sobre ticket PROMO)</p>
-                    </div>
-                    <div class="border-t pt-3">
-                        <p class="text-xs font-bold">La Alboreá</p>
-                        <p class="text-xs text-green-700 font-bold">Precio especial: 14€ (Antes 20€)</p>
-                        <p class="text-[10px]">Espectáculos a las 19:00h y 20:45h.</p>
-                    </div>
-                </div>
+                <h4 class="font-bold text-sm">Lolita's Tour (15% DTO)</h4>
+                <p class="text-xs text-gray-500 mb-2 font-mono uppercase">Código: INTERESCUELAS15</p>
             </div>
         </section>
 
         <!-- QUÉ VER -->
         <section id="ver" class="content-section hidden">
             <h2 class="section-title">Qué Ver</h2>
-            <div class="grid grid-cols-1 gap-4 text-sm">
-                <div class="card border-none bg-gray-50">
-                    <p>🕌 <b>Jardines de la Alhambra:</b> Imprescindible reservar con mucha antelación.</p>
-                </div>
-                <div class="card border-none bg-gray-50">
-                    <p>⛪ <b>Catedral y Capilla Real:</b> Joyas del renacimiento español.</p>
-                </div>
-                <div class="card border-none bg-gray-50">
-                    <p>🌅 <b>Miradores del Albaicín:</b> San Nicolás (el famoso) y San Cristóbal (vistas más amplias).</p>
-                </div>
-                <div class="card border-none bg-gray-50">
-                    <p>💃 <b>Sacromonte:</b> El barrio de las cuevas y la esencia flamenca.</p>
-                </div>
-                <div class="card border-none bg-gray-50">
-                    <p>📜 <b>Museo Casa de los Tiros:</b> Historia viva en el barrio del Realejo.</p>
-                </div>
-                <div class="card border-none bg-gray-50">
-                    <p>🦚 <b>Carmen de los Mártires:</b> Jardines románticos junto a la Alhambra.</p>
-                </div>
-            </div>
+            <ul class="space-y-2 text-sm">
+                <li class="card border-none bg-white">🕌 <b>Jardines de la Alhambra</b></li>
+                <li class="card border-none bg-white">⛪ <b>Catedral y Capilla Real</b></li>
+                <li class="card border-none bg-white">🌅 <b>Mirador de San Nicolás</b></li>
+            </ul>
         </section>
 
         <!-- COLABORADORES -->
         <section id="colaboradores" class="content-section hidden">
             <h2 class="section-title">Colaboradores</h2>
-            <p class="text-sm text-gray-500 mb-6">Gracias a todas las empresas que hacen esto posible:</p>
-            <div class="grid grid-cols-3 gap-4">
-                <div class="aspect-square bg-white border rounded p-2 flex items-center justify-center text-[10px] text-gray-400 text-center">Logo Alsa</div>
-                <div class="aspect-square bg-white border rounded p-2 flex items-center justify-center text-[10px] text-gray-400 text-center">Logo Luna Granada</div>
-                <div class="aspect-square bg-white border rounded p-2 flex items-center justify-center text-[10px] text-gray-400 text-center">Logo Libere</div>
-                <div class="aspect-square bg-white border rounded p-2 flex items-center justify-center text-[10px] text-gray-400 text-center">Logo Carmen de Aixa</div>
-                <div class="aspect-square bg-white border rounded p-2 flex items-center justify-center text-[10px] text-gray-400 text-center">Logo Lolitas</div>
-                <div class="aspect-square bg-white border rounded p-2 flex items-center justify-center text-[10px] text-gray-400 text-center">Logo La Alboreá</div>
+            <div class="grid grid-cols-2 gap-4">
+                <div class="bg-white p-4 rounded shadow-sm text-center text-xs text-gray-400">Logo Alsa</div>
+                <div class="bg-white p-4 rounded shadow-sm text-center text-xs text-gray-400">Logo Luna</div>
             </div>
         </section>
 
@@ -342,42 +243,21 @@
             <h2 class="section-title">Contacto</h2>
             <div class="space-y-4">
                 <a href="mailto:interescuelas2026@eipvirtual.com" class="contact-link">
-                    <i class="fa-solid fa-envelope text-red-800 text-xl"></i>
-                    <div>
-                        <p class="text-xs text-gray-500 uppercase font-bold">Email Oficial</p>
-                        <p class="text-sm">interescuelas2026@eipvirtual.com</p>
-                    </div>
-                </a>
-                <a href="https://whatsapp.com/channel/0029VbBu96r7j6gB3wr6Wa0g" class="contact-link">
-                    <i class="fa-brands fa-whatsapp text-green-600 text-xl"></i>
-                    <div>
-                        <p class="text-xs text-gray-500 uppercase font-bold">Canal de Whatsapp</p>
-                        <p class="text-sm italic">Únete para noticias en directo</p>
-                    </div>
+                    <i class="fa-solid fa-envelope text-red-800"></i>
+                    <p class="text-sm">interescuelas2026@eipvirtual.com</p>
                 </a>
                 <a href="https://instagram.com/interescuelaseip" target="_blank" class="contact-link">
-                    <i class="fa-brands fa-instagram text-pink-600 text-xl"></i>
-                    <div>
-                        <p class="text-xs text-gray-500 uppercase font-bold">Instagram</p>
-                        <p class="text-sm">@interescuelaseip</p>
-                    </div>
+                    <i class="fa-brands fa-instagram text-pink-600"></i>
+                    <p class="text-sm">@interescuelaseip</p>
                 </a>
-                <div class="contact-link">
-                    <i class="fa-solid fa-user-tie text-blue-600 text-xl"></i>
-                    <div>
-                        <p class="text-xs text-gray-500 uppercase font-bold">Contacto de confianza</p>
-                        <p class="text-sm font-bold">Paloma: 695 07 80 40</p>
-                    </div>
-                </div>
             </div>
         </section>
 
     </main>
 
     <footer class="text-center p-8 mt-10 border-t border-gray-100 text-gray-400 text-[10px]">
-        <p class="font-bold text-gray-500 uppercase tracking-widest">Escuela Internacional de Protocolo</p>
-        <p>Granada | Madrid | Valencia | Barcelona</p>
-        <p class="mt-4 italic">Organizado por alumnos de EIP Granada 2026</p>
+        <p class="font-bold text-gray-500 uppercase">Escuela Internacional de Protocolo</p>
+        <p>Organizado por alumnos de EIP Granada 2026</p>
     </footer>
 
     <script>
@@ -386,16 +266,10 @@
                 section.classList.add('hidden');
             });
             document.getElementById(sectionId).classList.remove('hidden');
-            
-            document.querySelectorAll('.nav-pill').forEach(btn => {
-                btn.classList.remove('active');
-            });
+            document.querySelectorAll('.nav-pill').forEach(btn => btn.classList.remove('active'));
             document.getElementById('btn-' + sectionId).classList.add('active');
-            
             window.scrollTo({top: 0, behavior: 'smooth'});
         }
     </script>
 </body>
-
 </html>
-
