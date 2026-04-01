@@ -162,6 +162,7 @@
         <button onclick="showSection('ver')" class="nav-pill" id="id-btn-ver">Qué ver</button>
         <button onclick="showSection('inscripcion')" class="nav-pill" id="id-btn-inscripcion">Inscripción</button>
         <button onclick="showSection('consignas')" class="nav-pill" id="id-btn-contacto">Consignas</button>
+        <button onclick="showSection('movilidad')" class="nav-pill" id="id-btn-movilidad">Movilidad Granada</button>
         <button onclick="showSection('colaboradores')" class="nav-pill" id="id-btn-colaboradores">Colaboradores</button>
         <button onclick="showSection('contacto')" class="nav-pill" id="id-btn-contacto">Contacto</button>
     </nav>
@@ -651,6 +652,217 @@
             </div> 
         </section>
 
+        <!-- MOVILIDAD GRANADA -->
+        <section id="movilidad" class="content-section hidden">
+            <h2 class="section-title">Movilidad Granada</h2>
+            <p class="text-sm text-gray-600 mb-6 italic">Información sobre transporte público, tarjetas y tarifas en Granada.</p>
+
+            <!-- AUTOBÚS URBANO -->
+            <div class="card bg-red-50 border-red-200">
+                <div class="flex items-center gap-3 mb-4">
+                    <i class="fa-solid fa-bus text-3xl text-red-800"></i>
+                    <h3 class="font-bold text-lg text-red-800">AUTOBÚS URBANO (Rojos)</h3>
+                </div>
+
+                <!-- Opción 1: Sin tarjeta -->
+                <div class="bg-white p-4 rounded border mb-4">
+                    <div class="flex justify-between items-center mb-3">
+                        <h4 class="font-bold text-sm">OPCIÓN 1: Sin tarjeta — Billete suelto</h4>
+                        <span class="bg-red-100 text-red-800 px-3 py-1 rounded font-bold">1,60 €</span>
+                    </div>
+                    <p class="text-xs text-gray-600 mb-3">Se compra al conductor o en la máquina de la parada.</p>
+                    <div class="bg-gray-50 p-3 rounded">
+                        <p class="text-[11px] font-bold text-gray-700 mb-2">💳 FORMAS DE PAGO:</p>
+                        <ul class="text-[11px] text-gray-600 space-y-1 ml-4">
+                            <li>• <b>Al conductor:</b> solo efectivo</li>
+                            <li>• <b>En las máquinas (Línea 4):</b> efectivo o tarjeta bancaria</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Opción 2: Con tarjeta Credibús -->
+                <div class="bg-white p-4 rounded border">
+                    <div class="flex justify-between items-center mb-3">
+                        <h4 class="font-bold text-sm">OPCIÓN 2: Con tarjeta — Credibús</h4>
+                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded font-bold">0,54 € / viaje</span>
+                    </div>
+                    <p class="text-xs text-gray-600 mb-3">Tarjeta monedero recargable. <b>La tarjeta cuesta 2 € adicionales.</b></p>
+                    <div class="bg-blue-50 border border-blue-300 p-2 rounded mb-3 text-center">
+                        <p class="text-[10px] text-blue-800 font-bold">
+                            <i class="fa-solid fa-users mr-1"></i> TRANSFERIBLE
+                        </p>
+                    </div>
+                    <div class="bg-gray-50 p-3 rounded mb-3">
+                        <p class="text-[11px] font-bold text-gray-700 mb-2">💳 DÓNDE COMPRAR Y RECARGAR:</p>
+                        <ul class="text-[11px] text-gray-600 space-y-1 ml-4">
+                            <li>• <b>Al conductor:</b> solo efectivo (recargas de 5, 10 o 20 €)</li>
+                            <li>• <b>Máquinas Línea 4:</b> efectivo o tarjeta bancaria</li>
+                        </ul>
+                    </div>
+                    <div class="bg-yellow-50 border border-yellow-300 p-3 rounded">
+                        <p class="text-[11px] text-yellow-800">
+                            <i class="fa-solid fa-sync-alt mr-1"></i>
+                            <b>TRASBORDOS:</b> Puedes cambiar de línea todas las veces que quieras durante <b>60 minutos sin coste extra</b>, siempre que no repitas la misma línea.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- METRO -->
+            <div class="card bg-blue-50 border-blue-200">
+                <div class="flex items-center gap-3 mb-4">
+                    <i class="fa-solid fa-train-subway text-3xl text-blue-800"></i>
+                    <h3 class="font-bold text-lg text-blue-800">METRO</h3>
+                </div>
+
+                <!-- Opción 1: Sin tarjeta -->
+                <div class="bg-white p-4 rounded border mb-4">
+                    <div class="flex justify-between items-center mb-3">
+                        <h4 class="font-bold text-sm">OPCIÓN 1: Sin tarjeta — Billete suelto</h4>
+                        <div class="text-right">
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded font-bold block mb-1">1,35 €</span>
+                            <span class="bg-blue-50 text-blue-700 px-2 py-0.5 rounded text-[10px]">Ida y vuelta: 2,70 €</span>
+                        </div>
+                    </div>
+                    <div class="bg-orange-50 border border-orange-300 p-2 rounded mb-3">
+                        <p class="text-[11px] text-orange-800">
+                            <i class="fa-solid fa-exclamation-triangle mr-1"></i>
+                            <b>OJO:</b> Si compras el billete de papel (cuesta 0,30 € la tarjeta) y solo lo usas una vez, el viaje real te sale a <b>1,65 € en total</b>.
+                        </p>
+                    </div>
+                    <div class="bg-gray-50 p-3 rounded">
+                        <p class="text-[11px] font-bold text-gray-700 mb-2">💳 FORMA DE PAGO:</p>
+                        <p class="text-[11px] text-gray-600">Se compran en las <b>máquinas expendedoras</b> de cada parada del metro. Efectivo o tarjeta bancaria.</p>
+                    </div>
+                </div>
+
+                <!-- Opción 2: Tarjeta monedero -->
+                <div class="bg-white p-4 rounded border mb-4">
+                    <div class="flex justify-between items-center mb-3">
+                        <h4 class="font-bold text-sm">OPCIÓN 2: Tarjeta monedero del metro</h4>
+                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded font-bold">0,49 € / viaje</span>
+                    </div>
+                    <div class="bg-blue-50 border border-blue-300 p-2 rounded mb-3 text-center">
+                        <p class="text-[10px] text-blue-800 font-bold">
+                            <i class="fa-solid fa-users mr-1"></i> TRANSFERIBLE
+                        </p>
+                    </div>
+                    <div class="bg-gray-50 p-3 rounded">
+                        <p class="text-[11px] font-bold text-gray-700 mb-2">💳 DÓNDE COMPRAR:</p>
+                        <p class="text-[11px] text-gray-600">En las <b>máquinas de cualquier parada del metro</b>, con efectivo o tarjeta bancaria. La tarjeta de cartón (la más barata) cuesta <b>0,30 €</b>.</p>
+                    </div>
+                </div>
+
+                <!-- Opción 3: Tarjeta turística -->
+                <div class="bg-white p-4 rounded border">
+                    <div class="flex justify-between items-center mb-3">
+                        <h4 class="font-bold text-sm">OPCIÓN 3: Tarjeta turística del metro</h4>
+                        <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded font-bold">4,50 € / día</span>
+                    </div>
+                    <p class="text-xs text-gray-600 mb-3">Permite <b>viajes ilimitados en metro</b> ese día. También existe para 2, 3 y 5 días.</p>
+                    <div class="bg-red-50 border border-red-300 p-2 rounded text-center">
+                        <p class="text-[10px] text-red-800 font-bold">
+                            <i class="fa-solid fa-user mr-1"></i> NO ES TRANSFERIBLE
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TARJETA DEL CONSORCIO -->
+            <div class="card bg-gradient-to-br from-purple-50 to-pink-50 border-purple-200">
+                <div class="flex items-center gap-3 mb-4">
+                    <i class="fa-solid fa-ticket text-3xl text-purple-800"></i>
+                    <div>
+                        <h3 class="font-bold text-lg text-purple-800">TARJETA DEL CONSORCIO</h3>
+                        <p class="text-xs text-purple-600 italic">La que vale para todo: Metro + Autobús</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-4 rounded border border-purple-200">
+                    <div class="flex justify-between items-center mb-3">
+                        <div>
+                            <p class="text-[11px] text-gray-500 mb-1">Coste de la tarjeta (no reembolsable)</p>
+                            <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded font-bold">1,50 €</span>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-[11px] text-gray-500 mb-1">Precio por viaje</p>
+                            <span class="bg-green-100 text-green-800 px-3 py-1 rounded font-bold">0,49 €</span>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-purple-50 border border-purple-300 p-3 rounded mb-3">
+                        <p class="text-[11px] text-purple-800">
+                            <i class="fa-solid fa-check-circle mr-1"></i>
+                            Esta es la <b>única tarjeta que funciona tanto en el metro como en el autobús</b>.
+                        </p>
+                    </div>
+
+                    <div class="bg-blue-50 border border-blue-300 p-2 rounded mb-3 text-center">
+                        <p class="text-[10px] text-blue-800 font-bold">
+                            <i class="fa-solid fa-users mr-1"></i> TRANSFERIBLE
+                        </p>
+                    </div>
+
+                    <div class="bg-gray-50 p-3 rounded">
+                        <p class="text-[11px] font-bold text-gray-700 mb-2">💳 DÓNDE COMPRAR Y RECARGAR:</p>
+                        <ul class="text-[11px] text-gray-600 space-y-1 ml-4">
+                            <li>• <b>Comprar:</b> En estancos y quioscos (normalmente en efectivo)</li>
+                            <li>• <b>Recargar:</b> En las máquinas del metro con tarjeta bancaria</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Resumen comparativo -->
+            <div class="card bg-gray-50">
+                <h4 class="font-bold text-sm mb-3 text-center">📊 Resumen Rápido</h4>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-[11px]">
+                        <thead class="bg-gray-200">
+                            <tr>
+                                <th class="p-2 text-left">Tarjeta</th>
+                                <th class="p-2 text-center">Precio/viaje</th>
+                                <th class="p-2 text-center">Transferible</th>
+                                <th class="p-2 text-center">Válida en</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-gray-700">
+                            <tr class="border-b">
+                                <td class="p-2 font-bold">Billete suelto autobús</td>
+                                <td class="p-2 text-center">1,60 €</td>
+                                <td class="p-2 text-center">—</td>
+                                <td class="p-2 text-center">Autobús</td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="p-2 font-bold">Credibús</td>
+                                <td class="p-2 text-center">0,54 €</td>
+                                <td class="p-2 text-center">✅</td>
+                                <td class="p-2 text-center">Autobús</td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="p-2 font-bold">Billete suelto metro</td>
+                                <td class="p-2 text-center">1,35 €</td>
+                                <td class="p-2 text-center">—</td>
+                                <td class="p-2 text-center">Metro</td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="p-2 font-bold">Tarjeta monedero metro</td>
+                                <td class="p-2 text-center">0,49 €</td>
+                                <td class="p-2 text-center">✅</td>
+                                <td class="p-2 text-center">Metro</td>
+                            </tr>
+                            <tr class="border-b bg-purple-50">
+                                <td class="p-2 font-bold text-purple-800">Tarjeta Consorcio</td>
+                                <td class="p-2 text-center font-bold text-purple-800">0,49 €</td>
+                                <td class="p-2 text-center">✅</td>
+                                <td class="p-2 text-center font-bold text-purple-800">Metro + Autobús</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section> 
+        
         <!-- COLABORADORES (LISTA COMPLETA DE 21) -->
         <section id="colaboradores" class="content-section hidden">
             <h2 class="section-title">Instituciones y Colaboradores</h2>
